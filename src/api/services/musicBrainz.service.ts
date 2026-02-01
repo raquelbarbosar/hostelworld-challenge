@@ -1,8 +1,9 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger } from '@nestjs/common';
-import { firstValueFrom } from 'rxjs';
+import { catchError, firstValueFrom } from 'rxjs';
 import { AppConfig } from '../../app.config';
 import { XMLParser } from 'fast-xml-parser';
+import { AxiosError } from 'axios';
 
 @Injectable()
 export class MusicBrainzService {
@@ -17,13 +18,20 @@ export class MusicBrainzService {
 
     // firstValueFrom -> Converts an observable to a promise
     const response = await firstValueFrom(
-      this.httpService.get(url, {
-        baseURL: AppConfig.musicBrainzUrl,
-        headers: {
-          Accept: 'application/xml',
-          'User-Agent': AppConfig.userAgent,
-        },
-      }),
+      this.httpService
+        .get(url, {
+          baseURL: AppConfig.musicBrainzUrl,
+          headers: {
+            Accept: 'application/xml',
+            'User-Agent': AppConfig.userAgent,
+          },
+        })
+        .pipe(
+          catchError((error: AxiosError) => {
+            this.logger.error(error.response.data);
+            throw 'An AxiosError happened!';
+          }),
+        ),
     );
 
     const parser = new XMLParser({

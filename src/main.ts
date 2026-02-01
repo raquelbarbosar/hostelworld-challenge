@@ -21,10 +21,11 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('Record API')
     .setDescription('The record management API')
+    .setVersion('1.0')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('swagger', app, document);
+  SwaggerModule.setup('swagger', app, document); //http://localhost:3000/api
 
   await app.listen(AppConfig.port);
 }
