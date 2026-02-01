@@ -1,6 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { RecordFormat, RecordCategory } from './record.enum';
+import { Track, TrackSchema } from './track.schema';
 
 @Schema({ timestamps: true })
 export class Record extends Document {
@@ -30,6 +31,13 @@ export class Record extends Document {
 
   @Prop({ required: false })
   mbid?: string;
+
+  //TODO: check if is better use a nested subdocument or a nested object
+  @Prop({
+    required: false,
+    type: [{ type: [TrackSchema] }],
+  })
+  trackList?: Track[];
 }
 
 export const RecordSchema = SchemaFactory.createForClass(Record);
