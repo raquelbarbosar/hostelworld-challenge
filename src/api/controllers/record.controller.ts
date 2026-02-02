@@ -34,7 +34,7 @@ export class RecordController {
   @Put(':id')
   @ApiOperation({ summary: 'Update an existing record' })
   @ApiResponse({ status: 200, description: 'Record updated successfully' })
-  @ApiResponse({ status: 500, description: 'Cannot find record to update' })
+  @ApiResponse({ status: 404, description: 'Cannot find record to update' })
   async update(
     @Param('id') id: string,
     @Body() updateRecordDto: UpdateRecordRequestDTO,
@@ -88,6 +88,8 @@ export class RecordController {
     @Query('album') album?: string,
     @Query('format') format?: RecordFormat,
     @Query('category') category?: RecordCategory,
+    @Query('page') page: number = 1,
+    @Query('limit') limit: number = 10,
   ): Promise<Record[]> {
     const allRecords = await this.recordModel.find().exec();
 
