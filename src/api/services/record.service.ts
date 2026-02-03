@@ -1,4 +1,4 @@
-import { Injectable, InternalServerErrorException, Logger } from '@nestjs/common';
+import { BadRequestException, Injectable, InternalServerErrorException, Logger, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Record } from '../schemas/record.schema';
 import { Model } from 'mongoose';
@@ -6,6 +6,8 @@ import { CreateRecordRequestDTO } from '../dtos/create-record.request.dto';
 import { MusicBrainzService } from './musicBrainz.service';
 import { Track } from '../schemas/track.schema';
 import { UpdateRecordRequestDTO } from '../dtos/update-record.request.dto';
+import { SearchRecordResponseDTO } from '../dtos/search-record.response.dto';
+import { RecordFormat, RecordCategory } from '../schemas/record.enum';
 
 @Injectable()
 export class RecordService {
@@ -43,8 +45,7 @@ export class RecordService {
     const record = await this.recordModel.findById(id);
 
     if (!record) {
-      //TODO: need to change the error type here -> can lead to misunderstanding
-      throw new InternalServerErrorException('Record not found');
+      throw new NotFoundException('Record not found');
     }
 
     if (updateRecordDto.mbid && (record.mbid !== updateRecordDto.mbid)) {
@@ -57,8 +58,7 @@ export class RecordService {
     const updated = await this.recordModel.updateOne(record);
 
     if (!updated) {
-      //TODO: need to change the error type here -> can lead to misunderstanding
-      throw new InternalServerErrorException('Failed to update record');
+      throw new BadRequestException('Failed to update record');
     }
 
     return record;
@@ -94,5 +94,46 @@ export class RecordService {
     }
 
     return trackList;
+  }
+
+  async find(limitPage: number, lastId: string, q: string, artist: string, album: string, format: RecordFormat, category: RecordCategory): Promise<SearchRecordResponseDTO> {
+    //const count = await this.recordModel.countDocuments({}).exec(); //takes too long for big inputs
+    //I also can use the metadataSet in the search
+    //const count = Math.max();
+    //const skip = (page - 1) * limitPage;
+    //const totalPage = Math.floor((count - 1)/ limitPage) + 1;
+
+    const filters = this.getFiltersObject(lastId, artist, album, format, category, q);
+
+    const recordsResult = await this.recordModel.find(filters).sort('_id').limit(limitPage).lean().exec();
+
+    const hasMorePages = recordsResult.length === limitPage;
+  
+    return { totalResults: recordsResult.length, limitPage, hasMorePages, results: recordsResult } as SearchRecordResponseDTO;
+  }
+
+  private getFiltersObject(lastId: string, artist: string, album: string, format: RecordFormat, category: RecordCategory, q: string): object {
+    let filters = {};
+
+    if (lastId) {
+      filters = { _id: { $gt: lastId } }
+    } 
+
+    if (artist) filters = { ...filters, artist };
+    if (album) filters = { ...filters, album };
+    if (format) filters = { ...filters, format };
+    if (category) filters = { ...filters, category };
+
+    if (q) {
+      const text = q.trim();
+      const regexQuery = new RegExp(this.escapeRegex(text), 'i');
+      filters = { ...filters, $or: [{ album: { $regex: regexQuery } }, { artist: { $regex: regexQuery } }] };
+    }
+
+    return filters;
+  }
+
+  private escapeRegex(value: string): string {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 }

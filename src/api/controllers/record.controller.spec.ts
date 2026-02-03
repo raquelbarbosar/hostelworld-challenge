@@ -5,15 +5,21 @@ import { Model } from 'mongoose';
 import { Record } from '../schemas/record.schema';
 import { CreateRecordRequestDTO } from '../dtos/create-record.request.dto';
 import { RecordCategory, RecordFormat } from '../schemas/record.enum';
+import { RecordService } from '../services/record.service';
+import { MusicBrainzService } from '../services/musicBrainz.service';
 
 describe('RecordController', () => {
   let recordController: RecordController;
+  let recordService: RecordService;
+  let musicBrainzService: MusicBrainzService;
   let recordModel: Model<Record>;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [RecordController],
       providers: [
+        RecordService,
+        MusicBrainzService,
         {
           provide: getModelToken('Record'),
           useValue: {
@@ -29,6 +35,8 @@ describe('RecordController', () => {
     }).compile();
 
     recordController = module.get<RecordController>(RecordController);
+    recordService = module.get<RecordService>(RecordService);
+    musicBrainzService = module.get<MusicBrainzService>(MusicBrainzService);
     recordModel = module.get<Model<Record>>(getModelToken('Record'));
   });
 
@@ -49,7 +57,8 @@ describe('RecordController', () => {
       qty: 10,
     };
 
-    jest.spyOn(recordModel, 'create').mockResolvedValue(savedRecord as any);
+    //jest.spyOn(recordModel, 'create').mockResolvedValue(savedRecord as any);
+    jest.spyOn(recordService, 'create').mockResolvedValue(savedRecord as any);
 
     const result = await recordController.create(createRecordDto);
     expect(result).toEqual(savedRecord);
@@ -64,17 +73,27 @@ describe('RecordController', () => {
   });
 
   it('should return an array of records', async () => {
-    const records = [
-      { _id: '1', name: 'Record 1', price: 100, qty: 10 },
-      { _id: '2', name: 'Record 2', price: 200, qty: 20 },
-    ];
+    const records = {
+      totalResults: 2,
+      limitPage: 4,
+      hasMorePages: false,
+      results: [
+        { _id: '1', name: 'Record 1', price: 100, qty: 10 },
+        { _id: '2', name: 'Record 2', price: 200, qty: 20 },
+      ],
+    };
 
-    jest.spyOn(recordModel, 'find').mockReturnValue({
+    // jest.spyOn(recordModel, 'find').mockReturnValue({
+    //   exec: jest.fn().mockResolvedValue(records),
+    // } as any);
+
+    jest.spyOn(recordService, 'find').mockReturnValue({
       exec: jest.fn().mockResolvedValue(records),
     } as any);
 
-    const result = await recordController.findAll();
-    expect(result).toEqual(records);
+    const response = await recordController.findAll();
+    expect(response).toEqual(records);
+    expect(response.results.length).toEqual(response.totalResults);
     expect(recordModel.find).toHaveBeenCalled();
   });
 });

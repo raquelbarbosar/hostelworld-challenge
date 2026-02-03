@@ -33,7 +33,6 @@ export class OrderService {
     );
 
     if (!record) {
-      //TODO: need to change the error type here -> can lead to misunderstanding
       await dbSession.abortTransaction();
       throw new NotFoundException('Record not found');
     }
@@ -52,7 +51,6 @@ export class OrderService {
       );
     }
 
-    //1. Create Order
     const newOrder = {
       idRecord: record._id,
       price: record.price,
@@ -62,7 +60,6 @@ export class OrderService {
     } as any;
     let order: Order = null;
 
-    //1. Update Record Qty 2.Create Order
     const newQty = record.qty - newOrder.qty;
     const recordUpdated = await this.recordService.update(newOrder.idRecord, {
       qty: newQty,

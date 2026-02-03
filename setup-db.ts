@@ -22,7 +22,7 @@ async function setupDatabase() {
           RecordSchema,
         );
 
-        await mongoose.connect(AppConfig.mongoUrl);
+        await mongoose.connect(AppConfig.mongoUrl); //autoIndex == true
 
         if (answer.toLowerCase() === 'y') {
           await recordModel.deleteMany({});

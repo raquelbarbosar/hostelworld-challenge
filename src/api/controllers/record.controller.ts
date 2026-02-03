@@ -15,6 +15,7 @@ import { CreateRecordRequestDTO } from '../dtos/create-record.request.dto';
 import { RecordCategory, RecordFormat } from '../schemas/record.enum';
 import { UpdateRecordRequestDTO } from '../dtos/update-record.request.dto';
 import { RecordService } from '../services/record.service';
+import { SearchRecordResponseDTO } from '../dtos/search-record.response.dto';
 
 @Controller('records')
 export class RecordController {
@@ -34,6 +35,7 @@ export class RecordController {
   @Put(':id')
   @ApiOperation({ summary: 'Update an existing record' })
   @ApiResponse({ status: 200, description: 'Record updated successfully' })
+  @ApiResponse({ status: 400, description: 'Bad Request' })
   @ApiResponse({ status: 404, description: 'Cannot find record to update' })
   async update(
     @Param('id') id: string,
@@ -47,7 +49,23 @@ export class RecordController {
   @ApiResponse({
     status: 200,
     description: 'List of records',
-    type: [Record],
+    type: SearchRecordResponseDTO,
+  })
+  @ApiQuery({
+    name: 'limitPage',
+    required: true,
+    default: 4,
+    description:
+      'Limit results per page',
+    type: Number,
+  })
+  @ApiQuery({
+    name: 'lastId',
+    required: false,
+    default: '',
+    description:
+      'Last ID returned in the search, it is the current cursor',
+    type: String,
   })
   @ApiQuery({
     name: 'q',
@@ -83,46 +101,14 @@ export class RecordController {
     type: String,
   })
   async findAll(
+    @Query('limit') limit: number = 4,
+    @Query('lastId') lastId?: string,
     @Query('q') q?: string,
     @Query('artist') artist?: string,
     @Query('album') album?: string,
     @Query('format') format?: RecordFormat,
     @Query('category') category?: RecordCategory,
-    @Query('page') page: number = 1,
-    @Query('limit') limit: number = 10,
-  ): Promise<Record[]> {
-    const allRecords = await this.recordModel.find().exec();
-
-    const filteredRecords = allRecords.filter((record) => {
-      let match = true;
-
-      if (q) {
-        match =
-          match &&
-          (record.artist.includes(q) ||
-            record.album.includes(q) ||
-            record.category.includes(q));
-      }
-
-      if (artist) {
-        match = match && record.artist.includes(artist);
-      }
-
-      if (album) {
-        match = match && record.album.includes(album);
-      }
-
-      if (format) {
-        match = match && record.format === format;
-      }
-
-      if (category) {
-        match = match && record.category === category;
-      }
-
-      return match;
-    });
-
-    return filteredRecords;
+  ): Promise<SearchRecordResponseDTO> {
+    return await this.recordService.find(limit, lastId, q, artist, album, format, category);
   }
 }
