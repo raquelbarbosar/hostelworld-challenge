@@ -16,7 +16,7 @@ import { TrackSchema } from './schemas/track.schema';
     HttpModule,
   ],
   controllers: [RecordController],
-  providers: [RecordService],
+  providers: [RecordService, MusicBrainzService],
   exports: [RecordService]
 })
 export class RecordModule {}

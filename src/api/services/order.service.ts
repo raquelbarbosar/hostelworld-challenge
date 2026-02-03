@@ -23,7 +23,7 @@ export class OrderService {
     private readonly recordService: RecordService,
   ) {}
 
-  async create(createOrderRequestDto: CreateOrderRequestDTO): Promise<any> {
+  async create(createOrderRequestDto: CreateOrderRequestDTO): Promise<Order> {
     const dbSession = await this.connection.startSession();
     await dbSession.startTransaction();
 

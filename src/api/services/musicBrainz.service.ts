@@ -1,5 +1,5 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, Logger } from '@nestjs/common';
+import { BadRequestException, Injectable, Logger } from '@nestjs/common';
 import { catchError, firstValueFrom } from 'rxjs';
 import { AppConfig } from '../../app.config';
 import { XMLParser } from 'fast-xml-parser';
@@ -29,7 +29,7 @@ export class MusicBrainzService {
         .pipe(
           catchError((error: AxiosError) => {
             this.logger.error(error.response.data);
-            throw 'An AxiosError happened!';
+            throw new BadRequestException('An AxiosError happened!');
           }),
         ),
     );

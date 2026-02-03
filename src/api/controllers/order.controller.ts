@@ -2,6 +2,7 @@ import { Controller, Post, Body } from '@nestjs/common';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { OrderService } from '../services/order.service';
 import { CreateOrderRequestDTO } from '../dtos/create-order.request.dto';
+import { Order } from '../schemas/order.schema';
 
 @Controller('order')
 export class OrderController {
@@ -14,7 +15,7 @@ export class OrderController {
   async create(
     //TODO: refactor to buy more than one product
     @Body() createOrderRequestDto: CreateOrderRequestDTO,
-  ): Promise<any> {
+  ): Promise<Order> {
     return await this.orderService.create(createOrderRequestDto);
   }
 }

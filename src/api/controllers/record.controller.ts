@@ -7,9 +7,7 @@ import {
   Query,
   Put,
 } from '@nestjs/common';
-import { InjectModel } from '@nestjs/mongoose';
 import { Record } from '../schemas/record.schema';
-import { Model } from 'mongoose';
 import { ApiOperation, ApiQuery, ApiResponse } from '@nestjs/swagger';
 import { CreateRecordRequestDTO } from '../dtos/create-record.request.dto';
 import { RecordCategory, RecordFormat } from '../schemas/record.enum';
@@ -20,8 +18,7 @@ import { SearchRecordResponseDTO } from '../dtos/search-record.response.dto';
 @Controller('records')
 export class RecordController {
   constructor(
-    @InjectModel('Record') private readonly recordModel: Model<Record>,
-    private recordService: RecordService,
+    private readonly recordService: RecordService,
   ) {}
 
   @Post()
