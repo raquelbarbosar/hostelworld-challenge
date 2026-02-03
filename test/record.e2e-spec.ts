@@ -60,9 +60,42 @@ describe('RecordController (e2e)', () => {
     const response = await request(app.getHttpServer())
       .get('/records?artist=The Fake Band')
       .expect(200);
-    expect(response.body.length).toBe(1);
-    expect(response.body[0]).toHaveProperty('artist', 'The Fake Band');
+    expect(response.body.results.length).toBe(1);
+    expect(response.body.results[0]).toHaveProperty('artist', 'The Fake Band');
   });
+
+  // it('should create a new record and update it', async () => {
+  //   const createRecordDto = {
+  //     artist: 'The Fake Band',
+  //     album: 'Fake Album',
+  //     price: 25,
+  //     qty: 10,
+  //     format: RecordFormat.VINYL,
+  //     category: RecordCategory.ROCK,
+  //   };
+
+  //   const updateRecordDto = {
+  //     qty: 100,
+  //   };
+
+  //   const createResponse = await request(app.getHttpServer())
+  //     .post('/records')
+  //     .send(createRecordDto)
+  //     .expect(201);
+
+  //   recordId = createResponse.body._id;
+
+  //   console.log(`UPDATE - E2E - ${recordId}`);
+  //   const url = `/records/${recordId}`;
+
+  //   const response = await request(app.getHttpServer())
+  //     .put(url)
+  //     .send(updateRecordDto)
+  //     .expect(200);
+  //   expect(response.body).toHaveProperty('qty', 100);
+  //   expect(response.body).toHaveProperty('artist', 'The Fake Band');
+  // });
+
   afterEach(async () => {
     if (recordId) {
       await recordModel.findByIdAndDelete(recordId);

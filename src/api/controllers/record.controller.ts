@@ -6,6 +6,7 @@ import {
   Param,
   Query,
   Put,
+  Logger,
 } from '@nestjs/common';
 import { Record } from '../schemas/record.schema';
 import { ApiOperation, ApiQuery, ApiResponse } from '@nestjs/swagger';
@@ -17,6 +18,8 @@ import { SearchRecordResponseDTO } from '../dtos/search-record.response.dto';
 
 @Controller('records')
 export class RecordController {
+  private readonly logger = new Logger(RecordController.name);
+
   constructor(
     private readonly recordService: RecordService,
   ) {}
@@ -26,6 +29,7 @@ export class RecordController {
   @ApiResponse({ status: 201, description: 'Record successfully created' })
   @ApiResponse({ status: 400, description: 'Bad Request' })
   async create(@Body() request: CreateRecordRequestDTO): Promise<Record> {
+    this.logger.log('Creating record');
     return await this.recordService.create(request);
   }
 
@@ -38,6 +42,7 @@ export class RecordController {
     @Param('id') id: string,
     @Body() updateRecordDto: UpdateRecordRequestDTO,
   ): Promise<Record> {
+    this.logger.log(`Updating record ${id}`);
     return await this.recordService.update(id, updateRecordDto);
   }
 
@@ -106,6 +111,7 @@ export class RecordController {
     @Query('format') format?: RecordFormat,
     @Query('category') category?: RecordCategory,
   ): Promise<SearchRecordResponseDTO> {
+    this.logger.log('Searching record');
     return await this.recordService.find(limit, lastId, q, artist, album, format, category);
   }
 }

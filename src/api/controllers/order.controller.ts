@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Logger } from '@nestjs/common';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { OrderService } from '../services/order.service';
 import { CreateOrderRequestDTO } from '../dtos/create-order.request.dto';
@@ -6,6 +6,8 @@ import { Order } from '../schemas/order.schema';
 
 @Controller('order')
 export class OrderController {
+  private readonly logger = new Logger(OrderController.name);
+
   constructor(private orderService: OrderService) {}
 
   @Post()
@@ -16,6 +18,7 @@ export class OrderController {
     //TODO: refactor to buy more than one product
     @Body() createOrderRequestDto: CreateOrderRequestDTO,
   ): Promise<Order> {
+    this.logger.log('Creating order');
     return await this.orderService.create(createOrderRequestDto);
   }
 }

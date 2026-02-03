@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable, InternalServerErrorException, Logger, NotFoundException } from '@nestjs/common';
+import { BadRequestException, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Record } from '../schemas/record.schema';
 import { Model } from 'mongoose';
@@ -30,14 +30,13 @@ export class RecordService {
     } as any;
 
     //TODO: check MBID -> create a function for that, to see if is valid
-    if (request.mbid) {
+    if (newRecord.mbid) {
       this.logger.log('Getting record track list');
-      await this.getTrackList(request.mbid, newRecord);
+      await this.getTrackList(newRecord);
     }
 
     this.logger.log('Creating record');
 
-    //TODO: how i can improve this return?
     return await this.recordModel.create(newRecord);
   }
 
@@ -50,7 +49,7 @@ export class RecordService {
 
     if (updateRecordDto.mbid && (record.mbid !== updateRecordDto.mbid)) {
       this.logger.log('Getting record track list');
-      await this.getTrackList(updateRecordDto.mbid, updateRecordDto);
+      await this.getTrackList(updateRecordDto);
     }
 
     Object.assign(record, updateRecordDto);
@@ -64,9 +63,9 @@ export class RecordService {
     return record;
   }
 
-  async getTrackList(albumMbid: string, newRecord: any): Promise<void> {
+  async getTrackList(newRecord: any): Promise<void> {
     const recordDetails = await this.musicBrainzService.getRecordDetails(
-      albumMbid
+      newRecord.mbid
     );
 
     if (recordDetails) {
@@ -75,7 +74,7 @@ export class RecordService {
     }
   }
 
-  async createTrackList(recordDetails: any): Promise<Track[]> {
+  private async createTrackList(recordDetails: any): Promise<Track[]> {
     const trackList = [];
     const trackDetailsList =
       recordDetails?.release['medium-list']?.medium['track-list']?.track ??

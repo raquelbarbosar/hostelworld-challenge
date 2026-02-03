@@ -32,7 +32,6 @@ export class Record extends Document {
   @Prop({ required: false })
   mbid?: string;
 
-  //TODO: check if is better use a nested subdocument or a nested object
   @Prop({
     required: false,
     type: [{ type: [TrackSchema] }],
