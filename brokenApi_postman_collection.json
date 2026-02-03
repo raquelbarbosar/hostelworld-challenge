@@ -1,0 +1,610 @@
+{
+  "info": {
+    "_postman_id": "915e8e29-66e7-4222-96b3-95c6c6ad9563",
+    "name": "Broken Record API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "6049012"
+  },
+  "item": [
+    {
+      "name": "Records",
+      "item": [
+        {
+          "name": "Search - Filters",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{local}}/records",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "records"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 - OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:3000/records",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "records"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "3863"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"f17-9D1j8pN8YiuqFpocoz5H0HVwoYA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 18:33:45 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"_id\": \"697ba73dd5db02c3d00eeaf8\",\n        \"artist\": \"Sisters of Mercy\",\n        \"album\": \"First and Last and Always\",\n        \"price\": 20,\n        \"qty\": 3,\n        \"format\": \"Vinyl\",\n        \"category\": \"Alternative\",\n        \"mbid\": \"63823c15-6abc-473e-9fad-d0d0fa983b34\",\n        \"created\": \"2026-01-29T18:30:21.742Z\",\n        \"lastModified\": \"2026-01-29T18:30:21.742Z\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-01-29T18:30:21.745Z\",\n        \"updatedAt\": \"2026-01-29T18:30:21.745Z\"\n    },\n    {\n        \"_id\": \"697ba73dd5db02c3d00eeaf9\",\n        \"artist\": \"Joy Division\",\n        \"album\": \"Unknown Pleasures\",\n        \"price\": 25,\n        \"qty\": 10,\n        \"format\": \"CD\",\n        \"category\": \"Alternative\",\n        \"mbid\": \"3dd3e849-5830-429a-ac81-75054fe1d720\",\n        \"created\": \"2026-01-29T18:30:21.743Z\",\n        \"lastModified\": \"2026-01-29T18:30:21.743Z\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-01-29T18:30:21.746Z\",\n        \"updatedAt\": \"2026-01-29T18:30:21.746Z\"\n    },\n    {\n        \"_id\": \"697ba73dd5db02c3d00eeafa\",\n        \"artist\": \"Chameleons\",\n        \"album\": \"Script of the Bridge\",\n        \"price\": 18,\n        \"qty\": 2,\n        \"format\": \"Vinyl\",\n        \"category\": \"Alternative\",\n        \"mbid\": \"21c47b6a-4c66-32ea-b67d-0987ba2a0a59\",\n        \"created\": \"2026-01-29T18:30:21.743Z\",\n        \"lastModified\": \"2026-01-29T18:30:21.743Z\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-01-29T18:30:21.746Z\",\n        \"updatedAt\": \"2026-01-29T18:30:21.746Z\"\n    },\n    {\n        \"_id\": \"697ba73dd5db02c3d00eeafb\",\n        \"artist\": \"Pearl Jam\",\n        \"album\": \"Ten\",\n        \"price\": 22,\n        \"qty\": 8,\n        \"format\": \"CD\",\n        \"category\": \"Rock\",\n        \"mbid\": \"ead8be7c-5252-4f86-9cad-b7c98aef226d\",\n        \"created\": \"2026-01-29T18:30:21.743Z\",\n        \"lastModified\": \"2026-01-29T18:30:21.743Z\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-01-29T18:30:21.746Z\",\n        \"updatedAt\": \"2026-01-29T18:30:21.746Z\"\n    },\n    {\n        \"_id\": \"697ba73dd5db02c3d00eeafc\",\n        \"artist\": \"Nirvana\",\n        \"album\": \"Nevermind\",\n        \"price\": 20,\n        \"qty\": 10,\n        \"format\": \"Vinyl\",\n        \"category\": \"Rock\",\n        \"mbid\": \"2feb350a-41c3-4358-addd-5b66ce2c34ba\",\n        \"created\": \"2026-01-29T18:30:21.743Z\",\n        \"lastModified\": \"2026-01-29T18:30:21.743Z\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-01-29T18:30:21.746Z\",\n        \"updatedAt\": \"2026-01-29T18:30:21.746Z\"\n    },\n    {\n        \"_id\": \"697ba73dd5db02c3d00eeafd\",\n        \"artist\": \"Franz Ferdinand\",\n        \"album\": \"Franz Ferdinand\",\n        \"price\": 21,\n        \"qty\": 90,\n        \"format\": \"Vinyl\",\n        \"category\": \"Indie\",\n        \"mbid\": \"af6691d1-12b2-4238-8380-682daa2754e3\",\n        \"created\": \"2026-01-29T18:30:21.743Z\",\n        \"lastModified\": \"2026-01-29T18:30:21.743Z\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-01-29T18:30:21.746Z\",\n        \"updatedAt\": \"2026-01-29T18:30:21.746Z\"\n    },\n    {\n        \"_id\": \"697ba73dd5db02c3d00eeafe\",\n        \"artist\": \"Arctic Monkeys\",\n        \"album\": \"AM\",\n        \"price\": 24,\n        \"qty\": 3,\n        \"format\": \"Vinyl\",\n        \"category\": \"Indie\",\n        \"mbid\": \"bf584cf2-dc33-433e-b8b2-b85578822726\",\n        \"created\": \"2026-01-29T18:30:21.743Z\",\n        \"lastModified\": \"2026-01-29T18:30:21.743Z\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-01-29T18:30:21.746Z\",\n        \"updatedAt\": \"2026-01-29T18:30:21.746Z\"\n    },\n    {\n        \"_id\": \"697ba73dd5db02c3d00eeaff\",\n        \"artist\": \"Foo Fighters\",\n        \"album\": \"Foo Fighers\",\n        \"price\": 8,\n        \"qty\": 10,\n        \"format\": \"CD\",\n        \"category\": \"Rock\",\n        \"mbid\": \"d6591261-daaa-4bb2-81b6-544e499da727\",\n        \"created\": \"2026-01-29T18:30:21.743Z\",\n        \"lastModified\": \"2026-01-29T18:30:21.743Z\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-01-29T18:30:21.746Z\",\n        \"updatedAt\": \"2026-01-29T18:30:21.746Z\"\n    },\n    {\n        \"_id\": \"697ba73dd5db02c3d00eeb00\",\n        \"artist\": \"The Cure\",\n        \"album\": \"Disintegration\",\n        \"price\": 23,\n        \"qty\": 1,\n        \"format\": \"Vinyl\",\n        \"category\": \"Alternative\",\n        \"mbid\": \"11af85e2-c272-4c59-a902-47f75141dc97\",\n        \"created\": \"2026-01-29T18:30:21.743Z\",\n        \"lastModified\": \"2026-01-29T18:30:21.743Z\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-01-29T18:30:21.746Z\",\n        \"updatedAt\": \"2026-01-29T18:30:21.746Z\"\n    },\n    {\n        \"_id\": \"697ba73dd5db02c3d00eeb01\",\n        \"artist\": \"The Smiths\",\n        \"album\": \"The Queen Is Dead\",\n        \"price\": 28,\n        \"qty\": 5,\n        \"format\": \"Vinyl\",\n        \"category\": \"Alternative\",\n        \"mbid\": \"3166b55c-17db-3a92-87f7-3b62d0222c46\",\n        \"created\": \"2026-01-29T18:30:21.743Z\",\n        \"lastModified\": \"2026-01-29T18:30:21.743Z\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-01-29T18:30:21.746Z\",\n        \"updatedAt\": \"2026-01-29T18:30:21.746Z\"\n    },\n    {\n        \"_id\": \"697ba73dd5db02c3d00eeb02\",\n        \"artist\": \"The Smiths\",\n        \"album\": \"The Queen Is Dead\",\n        \"price\": 10,\n        \"qty\": 10,\n        \"format\": \"CD\",\n        \"category\": \"Alternative\",\n        \"mbid\": \"fd0da5e1-fbb4-3a6c-a575-929b78a272c3\",\n        \"created\": \"2026-01-29T18:30:21.743Z\",\n        \"lastModified\": \"2026-01-29T18:30:21.743Z\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-01-29T18:30:21.746Z\",\n        \"updatedAt\": \"2026-01-29T18:30:21.746Z\"\n    }\n]"
+            },
+            {
+              "name": "200 - OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{local}}/records?page=1&limit=5&format=CD",
+                  "host": [
+                    "{{local}}"
+                  ],
+                  "path": [
+                    "records"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "5",
+                      "type": "text"
+                    },
+                    {
+                      "key": "format",
+                      "value": "CD",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "3599"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"e0f-XFn45XMu9P6kz7IhqgjJtOnOQNE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 02 Feb 2026 20:17:59 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"page\": 1,\n    \"limitPage\": 5,\n    \"totalResults\": 5,\n    \"results\": [\n        {\n            \"_id\": \"697ba73dd5db02c3d00eeaf8\",\n            \"artist\": \"The Cure\",\n            \"album\": \"Wish\",\n            \"price\": 5.99,\n            \"qty\": 23,\n            \"format\": \"CD\",\n            \"category\": \"Rock\",\n            \"mbid\": \"41cad68c-69f3-3f00-9f14-3bad16dfc213\",\n            \"created\": \"2026-01-29T18:30:21.742Z\",\n            \"lastModified\": \"2026-01-29T18:30:21.742Z\",\n            \"__v\": 0,\n            \"createdAt\": \"2026-01-29T18:30:21.745Z\",\n            \"updatedAt\": \"2026-02-02T10:07:52.202Z\",\n            \"trackList\": [\n                [\n                    {\n                        \"mbid\": \"99bc4cf9-ca44-3fa7-a587-d285a4691bcf\",\n                        \"number\": \"1\",\n                        \"position\": \"1\",\n                        \"title\": \"Open\",\n                        \"length\": 411933,\n                        \"_id\": \"697f764259e66fcc3e348289\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"de947bbf-92cf-3cd8-b6e4-6a64e3f23d77\",\n                        \"number\": \"2\",\n                        \"position\": \"2\",\n                        \"title\": \"High\",\n                        \"length\": 217306,\n                        \"_id\": \"697f764259e66fcc3e34828a\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"18158ca9-d113-3649-929e-8e050a1e4559\",\n                        \"number\": \"3\",\n                        \"position\": \"3\",\n                        \"title\": \"Apart\",\n                        \"length\": 398426,\n                        \"_id\": \"697f764259e66fcc3e34828b\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"0318dce2-38a9-339e-815f-9a405a756e02\",\n                        \"number\": \"4\",\n                        \"position\": \"4\",\n                        \"title\": \"From the Edge of the Deep Green Sea\",\n                        \"length\": 464666,\n                        \"_id\": \"697f764259e66fcc3e34828c\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"77303f2e-2a9a-3055-b30d-cc4d803e0aa6\",\n                        \"number\": \"5\",\n                        \"position\": \"5\",\n                        \"title\": \"Wendy Time\",\n                        \"length\": 313266,\n                        \"_id\": \"697f764259e66fcc3e34828d\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"4fe0aebc-9052-35dd-a11f-a86437452145\",\n                        \"number\": \"6\",\n                        \"position\": \"6\",\n                        \"title\": \"Doing the Unstuck\",\n                        \"length\": 264773,\n                        \"_id\": \"697f764259e66fcc3e34828e\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"078fd768-e5dd-3f1c-a072-507385930660\",\n                        \"number\": \"7\",\n                        \"position\": \"7\",\n                        \"title\": \"Friday I’m in Love\",\n                        \"length\": 218560,\n                        \"_id\": \"697f764259e66fcc3e34828f\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"bd3d58c8-324b-3917-aa37-254d32f22d11\",\n                        \"number\": \"8\",\n                        \"position\": \"8\",\n                        \"title\": \"Trust\",\n                        \"length\": 332333,\n                        \"_id\": \"697f764259e66fcc3e348290\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"654a54af-6990-3133-9b9e-9dac17c644f8\",\n                        \"number\": \"9\",\n                        \"position\": \"9\",\n                        \"title\": \"A Letter to Elise\",\n                        \"length\": 314400,\n                        \"_id\": \"697f764259e66fcc3e348291\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"fe4d7a96-f522-3e0c-b7b1-962ba9748f62\",\n                        \"number\": \"10\",\n                        \"position\": \"10\",\n                        \"title\": \"Cut\",\n                        \"length\": 355773,\n                        \"_id\": \"697f764259e66fcc3e348292\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"9447c830-77f0-39a3-87da-4aa5b422f967\",\n                        \"number\": \"11\",\n                        \"position\": \"11\",\n                        \"title\": \"To Wish Impossible Things\",\n                        \"length\": 283893,\n                        \"_id\": \"697f764259e66fcc3e348293\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"7df6273a-9973-326b-acce-2c955d1ce401\",\n                        \"number\": \"12\",\n                        \"position\": \"12\",\n                        \"title\": \"End\",\n                        \"length\": 405106,\n                        \"_id\": \"697f764259e66fcc3e348294\"\n                    }\n                ]\n            ]\n        },\n        {\n            \"_id\": \"697ba73dd5db02c3d00eeaf9\",\n            \"artist\": \"Joy Division\",\n            \"album\": \"Unknown Pleasures\",\n            \"price\": 25,\n            \"qty\": 10,\n            \"format\": \"CD\",\n            \"category\": \"Alternative\",\n            \"mbid\": \"3dd3e849-5830-429a-ac81-75054fe1d720\",\n            \"created\": \"2026-01-29T18:30:21.743Z\",\n            \"lastModified\": \"2026-01-29T18:30:21.743Z\",\n            \"__v\": 0,\n            \"createdAt\": \"2026-01-29T18:30:21.746Z\",\n            \"updatedAt\": \"2026-01-29T18:30:21.746Z\"\n        },\n        {\n            \"_id\": \"697ba73dd5db02c3d00eeafb\",\n            \"artist\": \"Pearl Jam\",\n            \"album\": \"Ten\",\n            \"price\": 22,\n            \"qty\": 8,\n            \"format\": \"CD\",\n            \"category\": \"Rock\",\n            \"mbid\": \"ead8be7c-5252-4f86-9cad-b7c98aef226d\",\n            \"created\": \"2026-01-29T18:30:21.743Z\",\n            \"lastModified\": \"2026-01-29T18:30:21.743Z\",\n            \"__v\": 0,\n            \"createdAt\": \"2026-01-29T18:30:21.746Z\",\n            \"updatedAt\": \"2026-01-29T18:30:21.746Z\"\n        },\n        {\n            \"_id\": \"697ba73dd5db02c3d00eeaff\",\n            \"artist\": \"Foo Fighters\",\n            \"album\": \"Foo Fighers\",\n            \"price\": 8,\n            \"qty\": 10,\n            \"format\": \"CD\",\n            \"category\": \"Rock\",\n            \"mbid\": \"d6591261-daaa-4bb2-81b6-544e499da727\",\n            \"created\": \"2026-01-29T18:30:21.743Z\",\n            \"lastModified\": \"2026-01-29T18:30:21.743Z\",\n            \"__v\": 0,\n            \"createdAt\": \"2026-01-29T18:30:21.746Z\",\n            \"updatedAt\": \"2026-01-29T18:30:21.746Z\"\n        },\n        {\n            \"_id\": \"697ba73dd5db02c3d00eeb02\",\n            \"artist\": \"The Smiths\",\n            \"album\": \"The Queen Is Dead\",\n            \"price\": 10,\n            \"qty\": 10,\n            \"format\": \"CD\",\n            \"category\": \"Alternative\",\n            \"mbid\": \"fd0da5e1-fbb4-3a6c-a575-929b78a272c3\",\n            \"created\": \"2026-01-29T18:30:21.743Z\",\n            \"lastModified\": \"2026-01-29T18:30:21.743Z\",\n            \"__v\": 0,\n            \"createdAt\": \"2026-01-29T18:30:21.746Z\",\n            \"updatedAt\": \"2026-01-29T18:30:21.746Z\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "200 - OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{local}}/records?limit=4&lastId=697c9cd9e990e971a26b4c8e",
+                  "host": [
+                    "{{local}}"
+                  ],
+                  "path": [
+                    "records"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1",
+                      "disabled": true
+                    },
+                    {
+                      "key": "limit",
+                      "value": "4"
+                    },
+                    {
+                      "key": "format",
+                      "value": "v",
+                      "disabled": true
+                    },
+                    {
+                      "key": "q",
+                      "value": "cure",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "lastId",
+                      "value": "697c9cd9e990e971a26b4c8e",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "7735"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1e37-Z6gLQeMGdhIcApBiaGllDgPhGOo\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 03 Feb 2026 10:58:59 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"totalResults\": 3,\n    \"limitPage\": 4,\n    \"hasMorePages\": false,\n    \"results\": [\n        {\n            \"_id\": \"697f56464ff582198e29a8a4\",\n            \"artist\": \"The Beatles\",\n            \"album\": \"Abbey Road\",\n            \"price\": 40.9,\n            \"qty\": 100,\n            \"format\": \"Vinyl\",\n            \"category\": \"Rock\",\n            \"mbid\": \"d6010be3-98f8-422c-a6c9-787e2e491e58\",\n            \"trackList\": [\n                [\n                    {\n                        \"mbid\": \"af19bbfd-fb14-3d15-a6aa-8072cf06775a\",\n                        \"number\": \"A1\",\n                        \"position\": \"1\",\n                        \"title\": \"Come Together\",\n                        \"length\": 261000,\n                        \"_id\": \"697f56464ff582198e29a8a5\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"1745aa16-a379-3623-93f1-43702101ce29\",\n                        \"number\": \"A2\",\n                        \"position\": \"2\",\n                        \"title\": \"Something\",\n                        \"length\": 183000,\n                        \"_id\": \"697f56464ff582198e29a8a6\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"00b6d385-f307-3734-b42e-534fa6f50011\",\n                        \"number\": \"A3\",\n                        \"position\": \"3\",\n                        \"title\": \"Maxwell’s Silver Hammer\",\n                        \"length\": 207000,\n                        \"_id\": \"697f56464ff582198e29a8a7\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"cf71d9b0-22e3-35bf-97db-d670ef032c31\",\n                        \"number\": \"A4\",\n                        \"position\": \"4\",\n                        \"title\": \"Oh! Darling\",\n                        \"length\": 207000,\n                        \"_id\": \"697f56464ff582198e29a8a8\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"9502fed2-e520-3d39-a698-7be0f4874516\",\n                        \"number\": \"A5\",\n                        \"position\": \"5\",\n                        \"title\": \"Octopus’s Garden\",\n                        \"length\": 171000,\n                        \"_id\": \"697f56464ff582198e29a8a9\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"cf64f6d1-9602-38df-94e8-b09bb2abc5a2\",\n                        \"number\": \"A6\",\n                        \"position\": \"6\",\n                        \"title\": \"I Want You (She’s So Heavy)\",\n                        \"length\": 467000,\n                        \"_id\": \"697f56464ff582198e29a8aa\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"8a1f63f0-d0fb-335f-9422-1e3eb1a37f4c\",\n                        \"number\": \"B1\",\n                        \"position\": \"7\",\n                        \"title\": \"Here Comes the Sun\",\n                        \"length\": 186000,\n                        \"_id\": \"697f56464ff582198e29a8ab\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"6e11a7e4-f15f-35b8-b1d6-c5e26fed7d9d\",\n                        \"number\": \"B2\",\n                        \"position\": \"8\",\n                        \"title\": \"Because\",\n                        \"length\": 166000,\n                        \"_id\": \"697f56464ff582198e29a8ac\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"83528d65-66a8-3bbb-8f56-4f2cf6da9199\",\n                        \"number\": \"B3\",\n                        \"position\": \"9\",\n                        \"title\": \"You Never Give Me Your Money\",\n                        \"length\": 242000,\n                        \"_id\": \"697f56464ff582198e29a8ad\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"daedde6c-9ab1-3e61-b86a-5e2d4709293c\",\n                        \"number\": \"B4\",\n                        \"position\": \"10\",\n                        \"title\": \"Sun King\",\n                        \"length\": 146000,\n                        \"_id\": \"697f56464ff582198e29a8ae\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"7ab529d1-b722-3f22-956c-eb57d1364535\",\n                        \"number\": \"B5\",\n                        \"position\": \"11\",\n                        \"title\": \"Mean Mr. Mustard\",\n                        \"length\": 66000,\n                        \"_id\": \"697f56464ff582198e29a8af\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"e5167f08-ee05-3f2b-ad08-2781e814aa0e\",\n                        \"number\": \"B6\",\n                        \"position\": \"12\",\n                        \"title\": \"Polythene Pam\",\n                        \"length\": 73000,\n                        \"_id\": \"697f56464ff582198e29a8b0\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"88b95ae3-c386-3564-8dc5-fe514aaabb15\",\n                        \"number\": \"B7\",\n                        \"position\": \"13\",\n                        \"title\": \"She Came In Through the Bathroom Window\",\n                        \"length\": 118000,\n                        \"_id\": \"697f56464ff582198e29a8b1\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"8f750a56-f807-3a90-8903-69012b5c47d1\",\n                        \"number\": \"B8\",\n                        \"position\": \"14\",\n                        \"title\": \"Golden Slumbers\",\n                        \"length\": 92000,\n                        \"_id\": \"697f56464ff582198e29a8b2\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"41965da0-4cee-3f34-9b08-e89066f09561\",\n                        \"number\": \"B9\",\n                        \"position\": \"15\",\n                        \"title\": \"Carry That Weight\",\n                        \"length\": 97000,\n                        \"_id\": \"697f56464ff582198e29a8b3\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"b44542fd-45ca-34d2-9b12-9fe1e28a721d\",\n                        \"number\": \"B10\",\n                        \"position\": \"16\",\n                        \"title\": \"The End\",\n                        \"length\": 140000,\n                        \"_id\": \"697f56464ff582198e29a8b4\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"5a099b73-19b0-3f89-8895-87b4446bb262\",\n                        \"number\": \"B11\",\n                        \"position\": \"17\",\n                        \"title\": \"Her Majesty\",\n                        \"length\": 23000,\n                        \"_id\": \"697f56464ff582198e29a8b5\"\n                    }\n                ]\n            ],\n            \"created\": \"2026-02-01T13:33:58.978Z\",\n            \"lastModified\": \"2026-02-01T13:33:58.978Z\",\n            \"createdAt\": \"2026-02-01T13:33:58.983Z\",\n            \"updatedAt\": \"2026-02-01T13:33:58.983Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6980780f0d3ded9ba1e066f8\",\n            \"artist\": \"The Cure\",\n            \"album\": \"Three Imaginary Boys\",\n            \"price\": 32.9,\n            \"qty\": 50,\n            \"format\": \"Vinyl\",\n            \"category\": \"Rock\",\n            \"mbid\": \"a661d5b0-7f4d-46e0-966b-55dc1eee254b\",\n            \"trackList\": [\n                [\n                    {\n                        \"mbid\": \"4951d83f-cae3-302c-a8d3-824e79857b0f\",\n                        \"number\": \"A1\",\n                        \"position\": \"1\",\n                        \"title\": \"10:15 Saturday Night\",\n                        \"length\": 222093,\n                        \"_id\": \"6980780f0d3ded9ba1e066f9\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"fcd7b9f0-3473-345f-ac53-307450a49a9a\",\n                        \"number\": \"A2\",\n                        \"position\": \"2\",\n                        \"title\": \"Accuracy\",\n                        \"length\": 137066,\n                        \"_id\": \"6980780f0d3ded9ba1e066fa\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"f251e1ff-8855-36e7-956f-8183ca8bb271\",\n                        \"number\": \"A3\",\n                        \"position\": \"3\",\n                        \"title\": \"Grinding Halt\",\n                        \"length\": 169306,\n                        \"_id\": \"6980780f0d3ded9ba1e066fb\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"71ac88a3-346a-3bdb-8fd1-d86494d38b6d\",\n                        \"number\": \"A4\",\n                        \"position\": \"4\",\n                        \"title\": \"Another Day\",\n                        \"length\": 224093,\n                        \"_id\": \"6980780f0d3ded9ba1e066fc\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"5d1e0b70-4029-3e6d-896d-c2a61f59255a\",\n                        \"number\": \"A5\",\n                        \"position\": \"5\",\n                        \"title\": \"Object\",\n                        \"length\": 183106,\n                        \"_id\": \"6980780f0d3ded9ba1e066fd\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"3136ca66-a5dc-35ed-93f3-e246d55f43f8\",\n                        \"number\": \"A6\",\n                        \"position\": \"6\",\n                        \"title\": \"Subway Song\",\n                        \"length\": 120933,\n                        \"_id\": \"6980780f0d3ded9ba1e066fe\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"60ec0e93-5242-3343-a012-c75b5e3f2938\",\n                        \"number\": \"B1\",\n                        \"position\": \"7\",\n                        \"title\": \"Foxy Lady\",\n                        \"length\": 149266,\n                        \"_id\": \"6980780f0d3ded9ba1e066ff\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"ba30dd68-6151-3dd9-b9f1-67ae2ebde07b\",\n                        \"number\": \"B2\",\n                        \"position\": \"8\",\n                        \"title\": \"Meathook\",\n                        \"length\": 137893,\n                        \"_id\": \"6980780f0d3ded9ba1e06700\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"4b55f928-7b5c-3fc1-a880-2d0175904d49\",\n                        \"number\": \"B3\",\n                        \"position\": \"9\",\n                        \"title\": \"So What\",\n                        \"length\": 159640,\n                        \"_id\": \"6980780f0d3ded9ba1e06701\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"5295ac20-85a7-35c0-946c-d251e984370e\",\n                        \"number\": \"B4\",\n                        \"position\": \"10\",\n                        \"title\": \"Fire in Cairo\",\n                        \"length\": 203626,\n                        \"_id\": \"6980780f0d3ded9ba1e06702\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"7711c582-2d91-3b49-ad76-15a9f0839a6d\",\n                        \"number\": \"B5\",\n                        \"position\": \"11\",\n                        \"title\": \"It’s Not You\",\n                        \"length\": 171973,\n                        \"_id\": \"6980780f0d3ded9ba1e06703\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"b32692e2-ffe8-3132-9751-d41c393add5f\",\n                        \"number\": \"B6\",\n                        \"position\": \"12\",\n                        \"title\": \"Three Imaginary Boys\",\n                        \"length\": 212293,\n                        \"_id\": \"6980780f0d3ded9ba1e06704\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"cff6ffc0-cd8f-3610-9811-7f84dfc4deed\",\n                        \"number\": \"B7\",\n                        \"position\": \"13\",\n                        \"title\": \"The Weedy Burton\",\n                        \"length\": 53640,\n                        \"_id\": \"6980780f0d3ded9ba1e06705\"\n                    }\n                ]\n            ],\n            \"created\": \"2026-02-02T10:10:23.995Z\",\n            \"lastModified\": \"2026-02-02T10:10:23.995Z\",\n            \"createdAt\": \"2026-02-02T10:10:24.002Z\",\n            \"updatedAt\": \"2026-02-02T10:10:24.002Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698078560d3ded9ba1e06707\",\n            \"artist\": \"The Cure\",\n            \"album\": \"Three Imaginary Boys\",\n            \"price\": 15.6,\n            \"qty\": 30,\n            \"format\": \"CD\",\n            \"category\": \"Rock\",\n            \"mbid\": \"3fcb1969-916b-37ca-8b4d-47402402c6cd\",\n            \"trackList\": [\n                [\n                    {\n                        \"mbid\": \"1c46c6e6-d20b-3005-ac24-ae7cec0c8a6d\",\n                        \"number\": \"1\",\n                        \"position\": \"1\",\n                        \"title\": \"10:15 Saturday Night\",\n                        \"length\": 221333,\n                        \"_id\": \"698078560d3ded9ba1e06708\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"1bd604a5-555b-39c1-9af1-3449a561f0ab\",\n                        \"number\": \"2\",\n                        \"position\": \"2\",\n                        \"title\": \"Accuracy\",\n                        \"length\": 138866,\n                        \"_id\": \"698078560d3ded9ba1e06709\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"d9fd65a8-866e-329d-af51-60bea11173b0\",\n                        \"number\": \"3\",\n                        \"position\": \"3\",\n                        \"title\": \"Grinding Halt\",\n                        \"length\": 169560,\n                        \"_id\": \"698078560d3ded9ba1e0670a\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"ace48f83-fd44-3507-b487-1dbf776f81b7\",\n                        \"number\": \"4\",\n                        \"position\": \"4\",\n                        \"title\": \"Another Day\",\n                        \"length\": 224066,\n                        \"_id\": \"698078560d3ded9ba1e0670b\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"8c5a8b71-a2cf-3ea9-b94c-c70f79114f0d\",\n                        \"number\": \"5\",\n                        \"position\": \"5\",\n                        \"title\": \"Object\",\n                        \"length\": 183466,\n                        \"_id\": \"698078560d3ded9ba1e0670c\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"7ee1e143-9064-3fc9-bf03-192386f651f6\",\n                        \"number\": \"6\",\n                        \"position\": \"6\",\n                        \"title\": \"Subway Song\",\n                        \"length\": 121133,\n                        \"_id\": \"698078560d3ded9ba1e0670d\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"7a3a36a8-f32b-3016-a3aa-4ee8b4226808\",\n                        \"number\": \"7\",\n                        \"position\": \"7\",\n                        \"title\": \"Foxy Lady\",\n                        \"length\": 149266,\n                        \"_id\": \"698078560d3ded9ba1e0670e\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"c720add3-e0d3-3ddc-8f2f-1a05f5c9896c\",\n                        \"number\": \"8\",\n                        \"position\": \"8\",\n                        \"title\": \"Meathook\",\n                        \"length\": 138066,\n                        \"_id\": \"698078560d3ded9ba1e0670f\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"e47c9a08-4fe7-314f-a00b-0da7a6d77556\",\n                        \"number\": \"9\",\n                        \"position\": \"9\",\n                        \"title\": \"So What\",\n                        \"length\": 157800,\n                        \"_id\": \"698078560d3ded9ba1e06710\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"6430e775-95e1-382d-bc0a-01121a0c59bd\",\n                        \"number\": \"10\",\n                        \"position\": \"10\",\n                        \"title\": \"Fire in Cairo\",\n                        \"length\": 203573,\n                        \"_id\": \"698078560d3ded9ba1e06711\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"319cf5bb-d0f7-3223-94db-bfa908a04a80\",\n                        \"number\": \"11\",\n                        \"position\": \"11\",\n                        \"title\": \"It’s Not You\",\n                        \"length\": 169693,\n                        \"_id\": \"698078560d3ded9ba1e06712\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"a9d27015-3127-3c5b-9965-5df95eeb496a\",\n                        \"number\": \"12\",\n                        \"position\": \"12\",\n                        \"title\": \"Three Imaginary Boys\",\n                        \"length\": 197866,\n                        \"_id\": \"698078560d3ded9ba1e06713\"\n                    }\n                ],\n                [\n                    {\n                        \"mbid\": \"8b9a1636-8f2c-3c26-be8a-7a33c3bfd7dd\",\n                        \"number\": \"13\",\n                        \"position\": \"13\",\n                        \"title\": \"The Weedy Burton\",\n                        \"length\": 64640,\n                        \"_id\": \"698078560d3ded9ba1e06714\"\n                    }\n                ]\n            ],\n            \"created\": \"2026-02-02T10:11:34.723Z\",\n            \"lastModified\": \"2026-02-02T10:11:34.723Z\",\n            \"createdAt\": \"2026-02-02T10:11:34.730Z\",\n            \"updatedAt\": \"2026-02-02T10:11:34.730Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"artist\": \"The Cure\",\n    \"album\": \"Three Imaginary Boys\",\n    \"price\": 32.90,\n    \"qty\": 50,\n    \"format\": \"Vinyl\",\n    \"category\": \"Rock\",\n    \"mbid\": \"a661d5b0-7f4d-46e0-966b-55dc1eee254b\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/records",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "records"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "400 - BR - body empty",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "localhost:3000/records",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "records"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "632"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"278-s/oci60YdjQxgH9TGuESf7fVVzI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Jan 2026 19:29:22 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": [\n        \"artist should not be empty\",\n        \"artist must be a string\",\n        \"album should not be empty\",\n        \"album must be a string\",\n        \"price must not be greater than 10000\",\n        \"price must not be less than 0\",\n        \"price must be a number conforming to the specified constraints\",\n        \"qty must not be greater than 100\",\n        \"qty must not be less than 0\",\n        \"qty must be an integer number\",\n        \"format should not be empty\",\n        \"format must be one of the following values: Vinyl, CD, Cassette, Digital\",\n        \"category should not be empty\",\n        \"category must be one of the following values: Rock, Jazz, Hip-Hop, Classical, Pop, Alternative, Indie\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+            },
+            {
+              "name": "201 - CREATED",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"artist\": \"The Cure\",\n    \"album\": \"Three Imaginary Boys\",\n    \"price\": 15.60,\n    \"qty\": 30,\n    \"format\": \"CD\",\n    \"category\": \"Rock\",\n    \"mbid\": \"3fcb1969-916b-37ca-8b4d-47402402c6cd\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{local}}/records",
+                  "host": [
+                    "{{local}}"
+                  ],
+                  "path": [
+                    "records"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "2321"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"911-NznjVP5CmZzHoxquJXlWjkkbncY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 02 Feb 2026 10:11:34 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"artist\": \"The Cure\",\n    \"album\": \"Three Imaginary Boys\",\n    \"price\": 15.6,\n    \"qty\": 30,\n    \"format\": \"CD\",\n    \"category\": \"Rock\",\n    \"mbid\": \"3fcb1969-916b-37ca-8b4d-47402402c6cd\",\n    \"trackList\": [\n        [\n            {\n                \"mbid\": \"1c46c6e6-d20b-3005-ac24-ae7cec0c8a6d\",\n                \"number\": \"1\",\n                \"position\": \"1\",\n                \"title\": \"10:15 Saturday Night\",\n                \"length\": 221333,\n                \"_id\": \"698078560d3ded9ba1e06708\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"1bd604a5-555b-39c1-9af1-3449a561f0ab\",\n                \"number\": \"2\",\n                \"position\": \"2\",\n                \"title\": \"Accuracy\",\n                \"length\": 138866,\n                \"_id\": \"698078560d3ded9ba1e06709\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"d9fd65a8-866e-329d-af51-60bea11173b0\",\n                \"number\": \"3\",\n                \"position\": \"3\",\n                \"title\": \"Grinding Halt\",\n                \"length\": 169560,\n                \"_id\": \"698078560d3ded9ba1e0670a\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"ace48f83-fd44-3507-b487-1dbf776f81b7\",\n                \"number\": \"4\",\n                \"position\": \"4\",\n                \"title\": \"Another Day\",\n                \"length\": 224066,\n                \"_id\": \"698078560d3ded9ba1e0670b\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"8c5a8b71-a2cf-3ea9-b94c-c70f79114f0d\",\n                \"number\": \"5\",\n                \"position\": \"5\",\n                \"title\": \"Object\",\n                \"length\": 183466,\n                \"_id\": \"698078560d3ded9ba1e0670c\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"7ee1e143-9064-3fc9-bf03-192386f651f6\",\n                \"number\": \"6\",\n                \"position\": \"6\",\n                \"title\": \"Subway Song\",\n                \"length\": 121133,\n                \"_id\": \"698078560d3ded9ba1e0670d\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"7a3a36a8-f32b-3016-a3aa-4ee8b4226808\",\n                \"number\": \"7\",\n                \"position\": \"7\",\n                \"title\": \"Foxy Lady\",\n                \"length\": 149266,\n                \"_id\": \"698078560d3ded9ba1e0670e\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"c720add3-e0d3-3ddc-8f2f-1a05f5c9896c\",\n                \"number\": \"8\",\n                \"position\": \"8\",\n                \"title\": \"Meathook\",\n                \"length\": 138066,\n                \"_id\": \"698078560d3ded9ba1e0670f\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"e47c9a08-4fe7-314f-a00b-0da7a6d77556\",\n                \"number\": \"9\",\n                \"position\": \"9\",\n                \"title\": \"So What\",\n                \"length\": 157800,\n                \"_id\": \"698078560d3ded9ba1e06710\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"6430e775-95e1-382d-bc0a-01121a0c59bd\",\n                \"number\": \"10\",\n                \"position\": \"10\",\n                \"title\": \"Fire in Cairo\",\n                \"length\": 203573,\n                \"_id\": \"698078560d3ded9ba1e06711\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"319cf5bb-d0f7-3223-94db-bfa908a04a80\",\n                \"number\": \"11\",\n                \"position\": \"11\",\n                \"title\": \"It’s Not You\",\n                \"length\": 169693,\n                \"_id\": \"698078560d3ded9ba1e06712\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"a9d27015-3127-3c5b-9965-5df95eeb496a\",\n                \"number\": \"12\",\n                \"position\": \"12\",\n                \"title\": \"Three Imaginary Boys\",\n                \"length\": 197866,\n                \"_id\": \"698078560d3ded9ba1e06713\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"8b9a1636-8f2c-3c26-be8a-7a33c3bfd7dd\",\n                \"number\": \"13\",\n                \"position\": \"13\",\n                \"title\": \"The Weedy Burton\",\n                \"length\": 64640,\n                \"_id\": \"698078560d3ded9ba1e06714\"\n            }\n        ]\n    ],\n    \"_id\": \"698078560d3ded9ba1e06707\",\n    \"created\": \"2026-02-02T10:11:34.723Z\",\n    \"lastModified\": \"2026-02-02T10:11:34.723Z\",\n    \"createdAt\": \"2026-02-02T10:11:34.730Z\",\n    \"updatedAt\": \"2026-02-02T10:11:34.730Z\",\n    \"__v\": 0\n}"
+            }
+          ]
+        },
+        {
+          "name": "Edit",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"qty\": 25\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/records/:id",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "records",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "697ba73dd5db02c3d00eeaf8"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 - OK",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"artist\": \"The Cure\",\n    \"album\": \"Wish\",\n    \"price\": 5.99,\n    \"qty\": 25,\n    \"format\": \"CD\",\n    \"category\": \"Rock\",\n    \"mbid\": \"41cad68c-69f3-3f00-9f14-3bad16dfc213\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{local}}records/:id",
+                  "host": [
+                    "{{local}}records"
+                  ],
+                  "path": [
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "697ba73dd5db02c3d00eeaf8"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "2158"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"86e-EHcCyRXpBLcmSUdszUVUIz8YSiY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Feb 2026 15:52:55 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"trackList\": [\n        [\n            {\n                \"mbid\": \"99bc4cf9-ca44-3fa7-a587-d285a4691bcf\",\n                \"number\": \"1\",\n                \"position\": \"1\",\n                \"title\": \"Open\",\n                \"length\": 411933,\n                \"_id\": \"697f764259e66fcc3e348289\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"de947bbf-92cf-3cd8-b6e4-6a64e3f23d77\",\n                \"number\": \"2\",\n                \"position\": \"2\",\n                \"title\": \"High\",\n                \"length\": 217306,\n                \"_id\": \"697f764259e66fcc3e34828a\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"18158ca9-d113-3649-929e-8e050a1e4559\",\n                \"number\": \"3\",\n                \"position\": \"3\",\n                \"title\": \"Apart\",\n                \"length\": 398426,\n                \"_id\": \"697f764259e66fcc3e34828b\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"0318dce2-38a9-339e-815f-9a405a756e02\",\n                \"number\": \"4\",\n                \"position\": \"4\",\n                \"title\": \"From the Edge of the Deep Green Sea\",\n                \"length\": 464666,\n                \"_id\": \"697f764259e66fcc3e34828c\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"77303f2e-2a9a-3055-b30d-cc4d803e0aa6\",\n                \"number\": \"5\",\n                \"position\": \"5\",\n                \"title\": \"Wendy Time\",\n                \"length\": 313266,\n                \"_id\": \"697f764259e66fcc3e34828d\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"4fe0aebc-9052-35dd-a11f-a86437452145\",\n                \"number\": \"6\",\n                \"position\": \"6\",\n                \"title\": \"Doing the Unstuck\",\n                \"length\": 264773,\n                \"_id\": \"697f764259e66fcc3e34828e\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"078fd768-e5dd-3f1c-a072-507385930660\",\n                \"number\": \"7\",\n                \"position\": \"7\",\n                \"title\": \"Friday I’m in Love\",\n                \"length\": 218560,\n                \"_id\": \"697f764259e66fcc3e34828f\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"bd3d58c8-324b-3917-aa37-254d32f22d11\",\n                \"number\": \"8\",\n                \"position\": \"8\",\n                \"title\": \"Trust\",\n                \"length\": 332333,\n                \"_id\": \"697f764259e66fcc3e348290\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"654a54af-6990-3133-9b9e-9dac17c644f8\",\n                \"number\": \"9\",\n                \"position\": \"9\",\n                \"title\": \"A Letter to Elise\",\n                \"length\": 314400,\n                \"_id\": \"697f764259e66fcc3e348291\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"fe4d7a96-f522-3e0c-b7b1-962ba9748f62\",\n                \"number\": \"10\",\n                \"position\": \"10\",\n                \"title\": \"Cut\",\n                \"length\": 355773,\n                \"_id\": \"697f764259e66fcc3e348292\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"9447c830-77f0-39a3-87da-4aa5b422f967\",\n                \"number\": \"11\",\n                \"position\": \"11\",\n                \"title\": \"To Wish Impossible Things\",\n                \"length\": 283893,\n                \"_id\": \"697f764259e66fcc3e348293\"\n            }\n        ],\n        [\n            {\n                \"mbid\": \"7df6273a-9973-326b-acce-2c955d1ce401\",\n                \"number\": \"12\",\n                \"position\": \"12\",\n                \"title\": \"End\",\n                \"length\": 405106,\n                \"_id\": \"697f764259e66fcc3e348294\"\n            }\n        ]\n    ],\n    \"_id\": \"697ba73dd5db02c3d00eeaf8\",\n    \"artist\": \"The Cure\",\n    \"album\": \"Wish\",\n    \"price\": 5.99,\n    \"qty\": 25,\n    \"format\": \"CD\",\n    \"category\": \"Rock\",\n    \"mbid\": \"41cad68c-69f3-3f00-9f14-3bad16dfc213\",\n    \"created\": \"2026-01-29T18:30:21.742Z\",\n    \"lastModified\": \"2026-01-29T18:30:21.742Z\",\n    \"__v\": 0,\n    \"createdAt\": \"2026-01-29T18:30:21.745Z\",\n    \"updatedAt\": \"2026-01-29T18:30:21.745Z\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Order",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"recordId\": \"697ba73dd5db02c3d00eeaf8\",\n    \"qty\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/order",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "order"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "201 - CREATED",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"recordId\": \"697ba73dd5db02c3d00eeaf8\",\n    \"qty\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{local}}/order",
+                  "host": [
+                    "{{local}}"
+                  ],
+                  "path": [
+                    "order"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "290"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"122-lZcK61mLeIBX1ZZvyQVuDbDPxjs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 02 Feb 2026 10:07:55 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"idRecord\": \"697ba73dd5db02c3d00eeaf8\",\n    \"price\": 5.99,\n    \"qty\": 1,\n    \"format\": \"CD\",\n    \"category\": \"Rock\",\n    \"_id\": \"698077790d3ded9ba1e066f6\",\n    \"created\": \"2026-02-02T10:07:53.720Z\",\n    \"lastModified\": \"2026-02-02T10:07:53.720Z\",\n    \"createdAt\": \"2026-02-02T10:07:53.724Z\",\n    \"updatedAt\": \"2026-02-02T10:07:53.724Z\",\n    \"__v\": 0\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "local",
+      "value": ""
+    }
+  ]
+}
